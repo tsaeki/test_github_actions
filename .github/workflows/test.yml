@@ -9,6 +9,8 @@ jobs:
     name: first job
     runs-on: ubuntu-latest
     steps:
+      - name: checkout
+        uses: actions/checkout@v1
       - name: first step on first job
         run: echo "first step"
         shell: bash
