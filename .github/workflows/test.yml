@@ -18,8 +18,8 @@ jobs:
         run: docker build -t tsaeki/test_github_actions .
       - name: push docker image
         # run: docker login && docker push tsaeki/test_github_actions
-        run: echo ${DOCKERHUB}
         env:
           dockerhub_username: ${{ secrets.DOCKERHUB_USERNAME }}
           dockerhub_password: ${{ secrets.DOCKERHUB_PASSWORD }}
           dockerhub: test
+        run: echo ${DOCKERHUB}
