@@ -14,3 +14,5 @@ jobs:
       - name: first step on first job
         run: echo "first step"
         shell: bash
+      - name: build docker image
+        run: docker build -t tsaeki/hello-world .
