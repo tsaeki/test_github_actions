@@ -17,9 +17,7 @@ jobs:
       - name: build docker image
         run: docker build -t tsaeki/test_github_actions .
       - name: push docker image
-        # run: docker login && docker push tsaeki/test_github_actions
+        run: docker login -u ${DOCKERHUB_USERNAME} -P ${DOCKERHUB_PASSWORD} && docker push tsaeki/test_github_actions
         env:
           dockerhub_username: ${{ secrets.DOCKERHUB_USERNAME }}
           dockerhub_password: ${{ secrets.DOCKERHUB_PASSWORD }}
-          dockerhub: test
-        run: echo ${DOCKERHUB}
