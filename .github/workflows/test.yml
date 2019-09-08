@@ -8,6 +8,6 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       first_step_id:
-        name: first step on first job
-        run: echo "first step"
-        shell: bash
+        - name: first step on first job
+          run: echo "first step"
+          shell: bash
