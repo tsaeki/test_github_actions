@@ -18,6 +18,9 @@ jobs:
         run: docker build -t tsaeki/test_github_actions .
       - name: docker login
         uses: actions/docker/login@master
+        env:
+          DOCKER_USERNAME: ${{ secrets.DOCKER_USERNAME }}
+          DOCKER_PASSWORD: ${{ secrets.DOCKER_PASSWORD }}
       - name: push docker image
         uses: actions/docker/cli@master
         with:
